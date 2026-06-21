@@ -8,8 +8,6 @@ print('Начало лога\n\n')
 random_data = np.random.randint(-10000, 10001, size=1000)
 
 # отчистка от цифового мусора
-min_meaning = -10000
-max_meaning = 10001
 
 def clean_data(input_list, min_bound=-10000, max_bound=10001):
 
