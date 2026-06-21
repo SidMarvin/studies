@@ -14,6 +14,7 @@ with open('random_numbers.txt', 'w', encoding='utf-8') as file:
     for number in series:
         file.write(f"{number}\n")
 
+print(f"\n{series}")
 print("\nПромежуточное сохранение в текстовый файл\n\n")
 #print(series)
 
@@ -34,7 +35,7 @@ print(f"Количество повторяющихся значений (дуб
 print(f"Максимальное значение: {max_value}")
 print(f"Сумма всех чисел: {sum_values}")
 print(f"Среднеквадратическое отклонение: {std_deviation:.2f}")
-print(f"Количество уникальных чисел для справки: {unique_count}")
+
 
 def math_round(x):
     sign = 1 if x >= 0 else -1
