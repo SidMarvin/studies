@@ -99,7 +99,6 @@ plt.show()
 # создание датафрейма
 df = pd.DataFrame({'Исходные данные': series})
 
-#reset_index(drop=True)
 df['По возрастанию'] = series.sort_values(ascending=True).reset_index(drop=True)
 
 df['По убыванию'] = series.sort_values(ascending=False).reset_index(drop=True)
