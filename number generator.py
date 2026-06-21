@@ -7,8 +7,33 @@ print('Начало лога\n\n')
 
 random_data = np.random.randint(-10000, 10001, size=1000)
 
+# отчистка от цифового мусора
+min_meaning = -10000
+max_meaning = 10001
+
+def clean_data(input_list, min_bound=-10000, max_bound=10001):
+
+    print("Начинаем отчистку данных...")
+    cleaned = []
+    for item in input_list:
+        # проверка на пустые значения
+        if item is None or (isinstance(item, float) and math.isnan(item)):
+            continue
+
+        # проверка попадания в целевой диапазон
+        if item < min_bound or item > max_bound:
+            continue
+
+        # сохраняем
+        cleaned.append(item)
+    print("Отчистка данных завершена")
+    return cleaned[:1000]
+
+# Запуск очистки данных
+validated_data = clean_data(random_data)
+
 # объект Series
-series = pd.Series(random_data)
+series = pd.Series(validated_data)
 
 with open('random_numbers.txt', 'w', encoding='utf-8') as file:
     for number in series:
